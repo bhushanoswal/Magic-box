@@ -1,0 +1,23 @@
+<h3>Welcome to Magicbox</h3> <hr>
+<h4>Please enter your name matrix number here</h4>
+<div class="well sidebar-nav">
+<%= form_for @user, :url => applications_create_user_path, :html => { :class => 'form-horizontal' } do |f| %>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :matrix, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :matrix, :class => 'text_field' %>
+      </div>
+    </div>
+
+
+    <div class="form-actions">
+      <%= f.submit  :class => 'btn btn-primary' %>
+    </div>
+     </div>
+<% end %>

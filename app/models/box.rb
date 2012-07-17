@@ -1,3 +1,3 @@
 class Box < ActiveRecord::Base
-  attr_accessible :name, :score, :time
+  attr_accessible :name, :score, :time, :matrix
 end

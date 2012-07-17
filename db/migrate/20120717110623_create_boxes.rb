@@ -3,7 +3,7 @@ class CreateBoxes < ActiveRecord::Migration
     create_table :boxes do |t|
       t.string :name
       t.datetime :time
-      t.int :score
+      t.integer :score
 
       t.timestamps
     end
