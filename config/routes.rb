@@ -1,8 +1,13 @@
 MagicBox::Application.routes.draw do
-  resources :applications
-
-  post "applications/create_user"
-  get  "applications/index"
+  resources :applications do
+  member do
+  end
+  collection do
+    post "create_user"
+    get  "index"
+    get "input"
+  end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

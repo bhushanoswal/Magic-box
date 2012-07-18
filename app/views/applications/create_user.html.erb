@@ -1,0 +1,27 @@
+<div id ="box">
+  <h4>Lates Start </h4><h1> Magic Box!</h1>
+
+  <%= label_tag 'Name'  %>
+  <%= text_field_tag :name, @user.name, 'disabled' => true %> <br> <br>
+
+  <%= label_tag 'Matrix'  %>
+  <%= text_field_tag :matrix, @user.matrix, :id => 'matrix', 'disabled' => true %> <br> <br>
+
+  <% @matrix = @user.matrix
+  k = 0%>
+    <%= form_tag input_applications_path, :method => "get" do |f| %>
+    <% (1..@matrix).each do |i| %>
+
+          <% (1..@matrix).each do |j| %>
+              <%= text_field_tag "#{k}",nil, :class => 'value' %>
+              <% k=k+1 %>
+          <% end %>
+            <br/>
+    <% end %>
+      <input type="hidden" name="order" value="<%=@user.matrix%>">
+  <%= submit_tag %>
+  <% end %>
+
+  <div class="btn-group">
+  </div>
+</div>

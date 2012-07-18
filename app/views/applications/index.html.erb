@@ -1,7 +1,18 @@
 <h3>Welcome to Magicbox</h3> <hr>
 <h4>Please enter your name matrix number here</h4>
 <div class="well sidebar-nav">
-<%= form_for @user, :url => applications_create_user_path, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @user, :url => create_user_applications_path, :html => { :class => 'form-horizontal' } do |f| %>
+      <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h4><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h4>
+
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
     <div class="control-group">
       <%= f.label :name, :class => 'control-label' %>
       <div class="controls">

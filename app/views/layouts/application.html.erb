@@ -43,7 +43,7 @@
     <div class="container">
       <div class="content">
         <div class="row">
-           <div class="span6">
+           <div class="span12">
               <%= yield %>
             </div>
             <div class="span3">
@@ -68,7 +68,7 @@
     <!--&lt;!&ndash; Javascripts-->
     <!--================================================== &ndash;&gt;-->
     <!--&lt;!&ndash; Placed at the end of the document so the pages load faster &ndash;&gt;-->
-    <!--<%#= javascript_include_tag "application" %>-->
+    <%= javascript_include_tag "application" %>
 
   </body>
 </html>

@@ -6,13 +6,15 @@ class ApplicationsController < ApplicationController
 
   def create_user
     @user = Box.new(params[:box])
-    if @user.save
-      redirect_to root_url
-    end
+    @user.save
+  end
+
+  def input
+   @result = Box.create_magic_matrix(params)
+
   end
 
   def result
-
   end
 
 end

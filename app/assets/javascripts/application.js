@@ -14,3 +14,60 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+$(document).ready(function(){
+    var order =$('#matrix').val();
+    var limit = order*order
+
+
+
+    $(".value").keydown(function(event) {
+        if(event.shiftKey)
+            event.preventDefault();
+        if (event.keyCode == 46 || event.keyCode == 8) {
+        }
+        else {
+            if (event.keyCode < 95) {
+
+                if (event.keyCode < 48 || event.keyCode > 57) {
+                    if (event.keyCode >= 37 && event.keyCode <= 40) {
+                    }
+                    else
+                    {
+                        event.preventDefault();
+                    }
+                }
+            }
+            else {
+                if (event.keyCode < 96 || event.keyCode > 105) {
+                    event.preventDefault();
+                }
+            }
+        }
+    });
+
+    $(".value").live('keyup',function() {
+
+//       var flag = 0;
+//        var obj = $(this).val();
+//        var obj1 = $(this);
+
+//        $(".value").each( function(){
+//           if($(this).val() == obj && $(this)!= obj1 && $(this).val() !="")
+//           {
+//              console.log($(this).val()+"======="+$(this))
+//              flag = 1;
+//           }
+//        });
+//        if(flag == 1)
+//            console.log("value repeated");
+
+
+        if($(this).val() > limit) {
+            alert("Value should be less" +limit );
+        }
+        else if($(this).val() < 1) {
+            alert("Value should be positive integer" );
+        }
+
+    });
+})
